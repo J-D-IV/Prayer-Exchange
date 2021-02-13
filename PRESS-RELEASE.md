@@ -1,10 +1,10 @@
 # Prayer Exchange #
 
 ## What is Prayer Exchange? ##
-  > Prayer exchange is an application that allows a user to send a prayer to a stranger and in exchange recieve a prayer from another sender!
+  > Prayer Exchange is an application that allows a user to send a prayer to a stranger and in exchange recieve a prayer from another sender!
 
 ## Problem ##
-  > The current Bible and prayer apps are great but they tend to only focus on the indivdual using the application. Payer Exchange intends to bridge the gap between users by allowing a seemless and anonomous interaction with sending of prayers.
+  > The current Bible and prayer apps are great but they tend to only focus on the indivdual using the application. Prayer Exchange intends to bridge the gap between users by allowing a covid-safe, seemless, and anonymous sending of prayers.
 
 ## What We Have to Say ##
   > 'We only hope to allow for a safe and easy way to pass love and hope through prayers for one another' - JD
