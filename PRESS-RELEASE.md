@@ -10,10 +10,10 @@
   > 'We only hope to allow for a safe and easy way to pass love and hope through prayers for one another' - JD
 
 ## How to Get Started ##
-  > Simply navugate to the website, input an approproate prayer, send it, and recieve a prayer back. It's really that easy!
+  > Simply navigate to the website, input an appropriate prayer, send it off, and recieve a prayer back. It's really that easy!
 
 ## Customer Quote ##
-  > 'In covid times it's been very hard to cmoe together and pray for one another. This app let me finally get back to it!' - Robin
+  > 'In covid times it's been very hard to come together and pray for one another. This app finally let me get back to it!' - Robin
 
 ## Send a Prayer! ##
   > Please head on over to our site and send a prayer for someone who needs it. Know that someone else is doing the same for you RIGHT NOW!
