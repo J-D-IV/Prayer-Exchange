@@ -21,11 +21,18 @@ class Joy extends React.Component  {
       <div class="input-group-d-flex input-group-lg">
         <form onSubmit={(e) => this.sumbitForm(e)}>
           <textarea 
-            style={{ display: 'flex', textAlign: 'center', fontSize: '1.75rem', width: '30rem', height: '10rem' }} 
+            style={{ 
+              display: 'flex', 
+              textAlign: 'center', 
+              fontSize: '1.75rem', 
+              width: '30rem', 
+              height: '15rem',
+              backgroundColor: '#F1DEED',
+            }} 
             onChange={(e) => this.setState({joy: e.target.value})} 
             class="input-group-text" 
             type="text" 
-            placeholder="Input your positivity here!" 
+            placeholder="Input your positivity here and then send it off to receive some joy!" 
             required>
           </textarea>
           <button type="submit" 
@@ -33,8 +40,10 @@ class Joy extends React.Component  {
               fontSize: '1.35rem', 
               fontWeight: 'bolder', 
               width: '30rem', 
-              height: '3rem' 
-            }}>Send this joy! <i className="fas fa-dove"></i>
+              height: '4rem',
+              backgroundColor: '#6188C4',
+              color: 'white',
+            }}>Send this joy to a stranger! <i className="fas fa-dove"></i>
           </button>
         </form>
       </div>
