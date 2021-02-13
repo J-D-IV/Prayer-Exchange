@@ -1,16 +1,25 @@
-DROP DATABASE IF EXISTS test;
 
-CREATE DATABASE test;
+-- JOY ----------------------------------------------
 
-USE test;
-
-CREATE TABLE items (
-  id int NOT NULL AUTO_INCREMENT,
-  quantity integer NOT NULL,
-  description varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
+CREATE TABLE IF NOT EXISTS joy (
+    id SERIAL PRIMARY KEY,
+    joy character varying(350) NOT NULL
 );
 
-/*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
- *  to create the database and the tables.*/
+-- INDEX -------------------------------------------------------
+
+CREATE UNIQUE INDEX joy_pkey ON joy(id int4_ops);
+
+
+
+-- NEWJOY ----------------------------------------------
+
+CREATE TABLE newjoy (
+    id SERIAL PRIMARY KEY,
+    joy character varying(350) NOT NULL,
+    approved boolean NOT NULL
+);
+
+-- Indices -------------------------------------------------------
+
+CREATE UNIQUE INDEX newjoy_pkey ON newjoy(id int4_ops);

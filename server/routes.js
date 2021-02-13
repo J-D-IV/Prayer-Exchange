@@ -1,45 +1,45 @@
 // const { response } = require('express');
 const express = require('express');
-const client = require('../db/newIndex');
+const client = require('../database/index');
 
-const prayer = express.Router();
+const joy = express.Router();
 
-prayer.get('/api/prayer', (req, res) => {
-  // client.query('SELECT * FROM prayer WHERE ratio=1 LIMIT 10', (err, response) => {
+
+joy.get('/api/joy', (req, res) => {
   client.query(`
-  SELECT * 
-  FROM prayer`,
-  (err, response) => {
+  SELECT reltuples::
+  bigint AS estimate 
+  FROM pg_class 
+  WHERE relname='joy'`,
+  (err, number) => {
     if (err) {
       res.status(400).send(err);
+      console.log(err);
     } else {
-      res.status(200).send(prayersAndPics);
+      const random = Math.ceil(Math.random() * number.rows[0].estimate);
+      console.log(random);
+      client.query(`
+      SELECT joy 
+      FROM joy 
+      WHERE id=${random}`,
+      (err, response) => {
+        if (err) {
+          res.status(400).send(err);
+          console.log(err);
+        } else {
+          res.status(200).send(response.rows[0].joy);
+        }
+      });
     }
-  });
+  })
 });
 
-prayer.get('/api/prayer/:id', (req, res) => {
-  const id = client.query(`SELECT reltuples::bigint AS estimate FROM pg_class where relname='showcase'`);
-  client.query(`
-  SELECT * 
-  FROM prayer 
-  WHERE id=${id}`,
-  (err, response) => {
-    if (err) {
-      res.status(400).send(err);
-      // console.log(err);
-    } else {
-      res.status(200).send(response);
-    }
-  });
-});
+joy.post('/api/newjoy', (req, res) => {
+  const newjoy = req.body;
+  const { joy } = newjoy;
 
-prayer.post('/api/prayer/:id', (req, res) => {
-  const newprayer = req.body;
-  const { prayer } = newprayer;
-
-  const text = 'INSERT INTO newprayers (prayer) VALUES ($1)';
-  const values = [prayer];
+  const text = 'INSERT INTO newjoys (joy, approved) VALUES ($1, $2)';
+  const values = [joy, 'false'];
 
   client.query(text, values, (err, response) => {
     if (err) {
@@ -50,4 +50,4 @@ prayer.post('/api/prayer/:id', (req, res) => {
   });
 });
 
-module.exports = prayer;
+module.exports = joy;

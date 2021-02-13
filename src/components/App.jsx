@@ -1,32 +1,71 @@
 import React from 'react';
 import Axios from 'axios';
-import List from './components/List.jsx';
+import Joy from './joy.jsx';
+import Affirmation from './affirmation.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      joy: '',
+      view: 'send',
     }
+    this.sendJoy = this.sendJoy.bind(this);
   }
 
   componentDidMount() {
-    Axios.get('/items') 
-      .then((data) => {
+    Axios.get('/api/joy') 
+      .then((joy) => {
         this.setState({
-          items: data.data
+          joy: joy.data
         })
       })
       .catch((err) => {
-        console.log('err', err);
+        console.log('GET did not work! -- ', err);
       })
     };
 
+    sendJoy(joy, option){
+      console.log('joy  ----  ', joy);
+      Axios.post('/api/newjoy', joy)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+      this.setState({
+        view: option
+      });
+    }
+
+    renderView() {
+      const {view} = this.state;
+      // console.log();
+      if (view === 'send') {
+        return <Joy sendJoy={this.sendJoy}/>;
+      } else {
+        // Axios.get(`/api/blogs`)
+        return <Affirmation joy={this.state.joy}/>;
+      }
+    }
+
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+    return (
+      <div 
+      className="body" 
+      style={{ 
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        // '-ms-transform': 'translateX(-50%) translateY(-50%)',
+        // '-webkit-transform': 'translate(-50%,-50%)',
+        'transform': 'translate(-50%,-50%)',
+        }}>
+        {this.renderView()}
+      </div>
+    )
   }
 }
 

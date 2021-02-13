@@ -1,20 +1,20 @@
 /* eslint-disable no-console */
-require('newrelic');
+// require('newrelic');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const showcase = require('./newShowcase');
+const joy = require('./routes');
 
 const app = express();
 
-const port = 3001;
+const port = 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.resolve(__dirname, '../dist')));
-app.use('/', showcase);
+app.use('/', joy);
 
 app.listen(port, (err) => {
   if (err) {
