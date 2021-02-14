@@ -11,13 +11,15 @@ class App extends React.Component {
       view: 'send',
     }
     this.sendJoy = this.sendJoy.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
     Axios.get('/api/joy') 
       .then((joy) => {
         this.setState({
-          joy: joy.data
+          joy: joy.data,
+          view: 'send',
         })
       })
       .catch((err) => {
@@ -47,7 +49,7 @@ class App extends React.Component {
         return <Joy sendJoy={this.sendJoy}/>;
       } else {
         // Axios.get(`/api/blogs`)
-        return <Affirmation joy={this.state.joy}/>;
+        return <Affirmation mount={this.componentDidMount} joy={this.state.joy}/>;
       }
     }
 
