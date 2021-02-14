@@ -15,7 +15,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('/api/joy') 
+    Axios.get('http://3.131.110.89:3000/api/joy') 
+    // Axios.get('http://localhost:3000/api/joy') 
       .then((joy) => {
         this.setState({
           joy: joy.data,
@@ -29,7 +30,8 @@ class App extends React.Component {
 
     sendJoy(joy, option){
       console.log('joy  ----  ', joy);
-      Axios.post('/api/newjoy', joy)
+      // Axios.post('/api/newjoy', joy)
+      Axios.post('http://3.131.110.89:3000/api/newjoy', joy)
       .then((result) => {
         console.log(result);
       })
