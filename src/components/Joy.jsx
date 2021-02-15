@@ -32,7 +32,7 @@ class Joy extends React.Component  {
             onChange={(e) => this.setState({joy: e.target.value})} 
             class="input-group-text" 
             type="text" 
-            placeholder="Input your positivity here and then send it off to receive some joy!" 
+            placeholder="Input your positivity here!" 
             required>
           </textarea>
           <button type="submit" 
@@ -43,7 +43,7 @@ class Joy extends React.Component  {
               height: '4rem',
               backgroundColor: '#6188C4',
               color: 'white',
-            }}>Send this joy to a stranger! <i className="fas fa-dove"></i>
+            }}>Send this joy!! <i className="fas fa-dove"></i>
           </button>
         </form>
       </div>

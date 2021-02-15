@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack -d",
     "watch": "webpack -d --watch",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "prod": "node server/index.js"
   },
   "author": "Beth Johnson",
   "license": "ISC",
