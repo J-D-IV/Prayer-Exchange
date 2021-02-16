@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -d",
     "watch": "webpack -d --watch",
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "prod": "node server/index.js"
   },
   "author": "Beth Johnson",
@@ -21,10 +21,12 @@
   "dependencies": {
     "angular": "^1.6.3",
     "axios": "^0.21.1",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.0.0-beta2",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.15.0",
+    "express-handlebars": "^5.2.0",
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
     "newrelic": "^7.1.1",

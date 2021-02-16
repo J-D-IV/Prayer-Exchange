@@ -2,11 +2,11 @@ import React from 'react';
 
 const Affirmation = (props) => (
   <div>
-    <div style={{ fontSize: '5rem', margin: '0 auto', verticalAlign: 'center', textAlign: 'center'}}>
+    <div style={{ fontSize: '3rem', margin: '0 auto', verticalAlign: 'center', textAlign: 'center'}}>
       {props.joy}
     </div>
     <div style={{ 
-      fontSize: '2rem', 
+      fontSize: '1rem', 
       margin: '0 auto', 
       verticalAlign: 'center', 
       textAlign: 'center',
@@ -18,7 +18,7 @@ const Affirmation = (props) => (
       }}
       onClick={
         () => props.mount()
-        }>Send some more joy! 
+        }>Send more joy! 
       <i className="fas fa-dove"></i></button>
     </div>
   </div>
