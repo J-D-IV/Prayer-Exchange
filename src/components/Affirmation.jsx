@@ -17,7 +17,7 @@ const Affirmation = (props) => (
       color: 'white',
       }}
       onClick={
-        () => props.mount()
+        () => props.changeView('send')
         }>Send more joy! 
       <i className="fas fa-dove"></i></button>
     </div>

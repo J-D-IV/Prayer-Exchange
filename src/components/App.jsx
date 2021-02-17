@@ -36,6 +36,7 @@ class App extends React.Component {
     };
 
     checkLogin(email, password) {
+     
       Axios.post('http://localhost:3000/login', {
         email: email,
         password: password
@@ -70,7 +71,7 @@ class App extends React.Component {
 
     changeView(newView) {
       this.setState({
-        view: newView
+        view: newView,
       })
     }
 
@@ -109,9 +110,10 @@ class App extends React.Component {
         return <Login validate={this.validate} checkLogin={this.checkLogin} changeView={this.changeView}  />
       } else if (view === 'register') {
         return <Register register={this.register}  />
-      } else {
+      } 
+      if (view === 'receive') {
         // Axios.get(`/api/blogs`)
-        return <Affirmation mount={this.componentDidMount} joy={this.state.joy}/>;
+        return <Affirmation changeView={this.changeView} joy={this.state.joy}/>;
       }
     }
 

@@ -19,10 +19,8 @@ joy.use(cookieParser());
 joy.use((req, res, next) => {
   // Get auth token from the cookies
   const authToken = req.cookies['AuthToken'];
-
   // Inject the user to the request
   req.user = authToken;
-
   next();
 });
 
