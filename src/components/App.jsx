@@ -70,6 +70,16 @@ class App extends React.Component {
     }
 
     changeView(newView) {
+      Axios.get('http://localhost:3000/api/joy') 
+      .then((joy) => {
+        this.setState({
+          joy: joy.data,
+        })
+      })
+      .catch((err) => {
+        console.log('GET in changeView did not work! -- ', err);
+      })
+
       this.setState({
         view: newView,
       })
