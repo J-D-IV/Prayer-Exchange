@@ -36,7 +36,7 @@ class Login extends React.Component {
   } 
   render() {
     return (
-      <div class="col-md-6">
+      <div className="row justify-content-center">
         {/* <div>
         {this.state.isTrue === false ? (
               <Quantity getQuantity={this.getQuantity} />
@@ -44,15 +44,13 @@ class Login extends React.Component {
             )}
         </div> */}
           <form  onSubmit={() => this.props.checkLogin(this.state.email, this.state.password)}>
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input onChange={(e) => this.handleEmailChange(e)} name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
+              <div className="form-group col-12">
+                  <input onChange={(e) => this.handleEmailChange(e)} name="email" type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
               </div>
-              <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input onChange={(e) => this.handlePasswordChange(e)} name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
+              <div className="form-group col-12">
+                  <input onChange={(e) => this.handlePasswordChange(e)} name="password" type="password" className="form-control col-12" id="exampleInputPassword1" placeholder="Password" required/>
               </div>
-              <button type="submit" class="btn btn-primary" >Login</button>
+              <button id="buttonlogin" style={{  fontWeight: 'bold' }} type="submit" className="btn btn-secondary col-12" >Login</button>
           </form>
       </div>
     )
