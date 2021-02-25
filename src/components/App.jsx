@@ -1,9 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
-import Joy from './joy.jsx';
-import Affirmation from './affirmation.jsx'
-import Home from './home.jsx';
-import Login from './login.jsx';
+import Joy from './Joy.jsx';
+import Affirmation from './Affirmation.jsx'
+import Home from './Home.jsx';
+import Login from './Login.jsx';
 import Register from './Register.jsx';
 
 
