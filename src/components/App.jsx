@@ -1,10 +1,10 @@
 import React from 'react';
 import Axios from 'axios';
-import Joy from './joy';
-import Affirmation from './affirmation'
-import Home from './home';
-import Login from './login';
-import Register from './Register';
+import Joy from './joy.jsx';
+import Affirmation from './affirmation.jsx'
+import Home from './home.jsx';
+import Login from './login.jsx';
+import Register from './Register.jsx';
 
 
 class App extends React.Component {
