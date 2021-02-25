@@ -9,7 +9,7 @@ const client = new Pool({
   database: 'd739q6ilskd55v',
   host: 'ec2-54-164-241-193.compute-1.amazonaws.com',
   password: 'e9a6a5645eda0477e16384d6de9abb2f04662b2461de85fe57aefc6487f17112',
-  database: 'Spread Joy',
+  // database: 'Spread Joy',
   port: 5432,
 });
 
