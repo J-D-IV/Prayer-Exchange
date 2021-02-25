@@ -34,10 +34,7 @@ joy.post('/login', (req, res) => {
   client.query(text, values, (err, response) => {
     console.log(response)
     if (response.rowCount === 0) {
-      res.send(err, {
-        message: 'Invalid username or password',
-        messageClass: 'alert-danger'
-    });
+      res.status(400).send(response);
     }
     else {
       const authToken = generateAuthToken();

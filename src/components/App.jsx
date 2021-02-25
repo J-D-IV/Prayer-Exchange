@@ -22,8 +22,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // Axios.get('http://3.131.110.89:3000/api/joy') 
-    Axios.get('http://localhost:3000/api/joy') 
+    Axios.get('http://18.223.135.151:3000/api/joy') 
+    // Axios.get('http://localhost:3000/api/joy') 
       .then((joy) => {
         this.setState({
           joy: joy.data,
@@ -35,21 +35,24 @@ class App extends React.Component {
       })
     };
 
-    checkLogin(email, password) {
-     
-      Axios.post('http://localhost:3000/login', {
+    checkLogin(e, email, password) {
+     e.preventDefault();
+      // Axios.post('http://localhost:3000/login', {
+      Axios.post('http://18.223.135.151:3000/login', { 
         email: email,
         password: password
+      })
+      .then((data) => {
+        console.log(data.status);
+        this.setState({
+          view: 'send'
+        }) 
       })
       .catch((err) => {
         return this.setState({
             view: 'login'
           })
       }) 
-
-        this.setState({
-          view: 'send'
-        }) 
       
     }
 
@@ -70,7 +73,8 @@ class App extends React.Component {
     }
 
     changeView(newView) {
-      Axios.get('http://localhost:3000/api/joy') 
+      // Axios.get('http://localhost:3000/api/joy') 
+      Axios.get('http://18.223.135.151:3000/api/joy') 
       .then((joy) => {
         this.setState({
           joy: joy.data,
@@ -91,12 +95,12 @@ class App extends React.Component {
         joy: joy,
       }
       console.log('obj ----', obj);
-      Axios.post('http://localhost:3000/api/newjoy', {
-        joy: joy,
-      })
-    //   Axios.post('http://3.131.110.89:3000/api/newjoy', {
-    //   joy: joy,
-    // })
+      // Axios.post('http://localhost:3000/api/newjoy', {
+      //   joy: joy,
+      // })
+      Axios.post('http://18.223.135.151:3000/api/newjoy', {
+      joy: joy,
+    })
       .then((result) => {
         console.log(result);
       })

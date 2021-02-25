@@ -18,7 +18,6 @@ const Affirmation = (props) => (
       className="btn btn-secondary btn-lg active"
       style={{ 
       fontWeight: 'bolder',
-      color: 'white',
       }}
       onClick={
         () => props.changeView('send')

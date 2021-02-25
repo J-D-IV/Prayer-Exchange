@@ -43,7 +43,7 @@ class Login extends React.Component {
             ) : (<span>Temporarily out of stock</span>
             )}
         </div> */}
-          <form  onSubmit={() => this.props.checkLogin(this.state.email, this.state.password)}>
+          <form  onSubmit={(e) => this.props.checkLogin(e, this.state.email, this.state.password)}>
               <div className="form-group col-12">
                   <input onChange={(e) => this.handleEmailChange(e)} name="email" type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
               </div>
