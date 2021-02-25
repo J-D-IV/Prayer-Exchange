@@ -4,7 +4,7 @@ const Affirmation = (props) => (
   <div>
     <div 
     className="d-flex"
-    style={{ color: '#4D535A', fontFamily: 'Dekko', fontSize: '2.65rem', marginBottom: '50px', fontWeight: 'bolder', verticalAlign: 'center', textAlign: 'center', textShadow: '5px 5px 5px white, 8px 8px #E2BEE8'}}>
+    style={{ color: '#4D535A', fontFamily: 'Dekko', fontSize: '2.5rem', marginBottom: '50px', fontWeight: 'bolder', verticalAlign: 'center', textAlign: 'center', textShadow: '5px 5px 5px white, 8px 8px #E2BEE8'}}>
       {props.joy}
     </div>
     <div style={{ 
@@ -15,7 +15,7 @@ const Affirmation = (props) => (
       }}>
       <button
       id="buttonAffirm"
-      className="btn btn-secondary btn-lg active"
+      className="btn btn-secondary btn-md active"
       style={{ 
       fontWeight: 'bolder',
       }}
