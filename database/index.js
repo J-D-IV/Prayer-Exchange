@@ -1,5 +1,5 @@
-const { Pool } = require('pg');
-
+// const { Pool } = require('pg');
+const { Client } = require('pg');
 // const client = new Pool({
 //   // user: 'postgres',
 //   // host: '18.217.213.246',
